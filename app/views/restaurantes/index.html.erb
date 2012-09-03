@@ -1,0 +1,23 @@
+<a href='/restaurantes/new' class='btn btn-small pull-right'><i class='icon-plus'></i>Novo Restaurante</a>
+<legend> Listagem de Restaurantes</legend>
+ <table class="table table-striped">
+  <tr>
+    <th>Nome</th>
+    <th>Endereco</th>
+	<th>Especialidade</th>
+	<th></th>
+	<th></th>
+	<th></th>
+  </tr>
+  
+<% @restaurantes.each do |restaurante| %>
+  <tr>
+    <td><%= restaurante.nome %></td>
+    <td><%= restaurante.endereco %></td>
+    <td><%= restaurante.especialidade %></td>
+    <td><%= link_to 'Visualizar', action: 'show', id: restaurante %></td>
+    <td><%= link_to 'Editar', edit_restaurante_path(restaurante) %></td>
+	<td><%= link_to 'Apagar', restaurante, method: :delete, data: { confirm: 'Voce tem certeza?' } %></td>
+  </tr>
+<% end %>
+</table>

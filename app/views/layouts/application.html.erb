@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="/twitter-bootstrap/twitter-bootstrap-v2/docs/assets/css/bootstrap.css">
+	<head>
+	  <title>Programa de Qualificacao de Restaurantes</title>
+	  <title>VotaPrato</title>
+	  <%= stylesheet_link_tag    "application", :media => "all" %>
+	  <%= javascript_include_tag "application" %>
+	  <%= csrf_meta_tags %>
+	  
+	</head>
+	<body>
+	  <div class='navbar'>
+	    <div class='navbar-inner'>
+		  <div class='container-fluid'>
+		    <a href='#' class='brand'>VotaPrato</a>
+			<%= menu_principal %>
+		  </div>
+        </div>
+       </div>		
+	   
+	   <div class='container-fluid'>
+	     <%= yield %>
+	   </div>
+		
+	
+	</body>
+</html>

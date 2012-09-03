@@ -1,0 +1,21 @@
+<h1>Clientes <a href='/clientes/new' class='btn btn-small pull-right'><i class='icon-plus'></i>Novo Cliente</a></h1>
+
+<table class="table table-striped">
+  <tr>
+    <th>Nome</th>
+    <th>Idade</th>
+	<th></th>
+	<th></th>
+	<th></th>
+  </tr>
+
+<% @clientes.each do |cliente| %>
+  <tr>
+    <td><%= cliente.nome %></td>
+    <td><%= cliente.idade %></td>
+    <td><%= link_to 'Exibir', cliente %></td>
+    <td><%= link_to 'Editar', edit_cliente_path(cliente) %></td>
+	<td><%= link_to 'Apagar', cliente, method: :delete, data: { confirm: 'Voce tem certeza?' } %></td>
+  </tr>
+<% end %>
+</table>

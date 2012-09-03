@@ -1,0 +1,26 @@
+<h1>Qualificacoes  <a href='/qualificacoes/new' class='btn btn-small pull-right'><i class='icon-plus'></i>Nova Qualificacao</a></h1>
+
+<table class="table table-striped">
+  <tr>
+    <th>Cliente</th>
+    <th>Restaurante</th>
+    <th>Nota</th>
+    <th>Valor gasto</th>
+	<th></th>
+	<th></th>
+	<th></th>
+  </tr>
+
+<% @qualificacoes.each do |qualificacao| %>
+  <tr>
+    <td><%= qualificacao.cliente.nome %></td>
+    <td><%= qualificacao.restaurante.nome %></td>
+    <td><%= qualificacao.nota %></td>
+    <td><%= valor_formatado(qualificacao.valor_gasto) %></td>
+    <td><%= link_to 'Visualizar', qualificacao %></td>
+    <td><%= link_to 'Editar', edit_qualificacao_path(qualificacao) %></td>
+    <td><%= link_to 'Apagar', qualificacao, method: :delete, data: { confirm: 'Voce tem certeza?' } %></td>
+  </tr>
+<% end %>
+</table>
+
